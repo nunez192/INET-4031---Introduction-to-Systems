@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Incident Tracker</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <h1>IT Helpdesk &mdash; Incident Tracker</h1>
+  </header>
+
+  <main>
+    <section class="new-ticket">
+      <h2>Open a New Ticket</h2>
+      <form action="{{ url_for('create_ticket') }}" method="post">
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" required maxlength="120">
+
+        <label for="description">Description</label>
+        <textarea id="description" name="description" rows="3"></textarea>
+
+        <label for="status">Status</label>
+        <select id="status" name="status">
+          {% for s in statuses %}
+          <option value="{{ s }}">{{ s.replace('_', ' ') }}</option>
+          {% endfor %}
+        </select>
+
+        <button type="submit">Create Ticket</button>
+      </form>
+    </section>
+
+    <section class="ticket-list">
+      <h2>Tickets ({{ tickets|length }})</h2>
+      {% if not tickets %}
+      <p class="empty">No tickets yet. Create one above.</p>
+      {% else %}
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Created</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for ticket in tickets %}
+          <tr class="status-{{ ticket.status }}">
+            <td>#{{ ticket.id }}</td>
+            <td>{{ ticket.title }}</td>
+            <td>{{ ticket.description }}</td>
+            <td>
+              <form action="{{ url_for('update_status', ticket_id=ticket.id) }}" method="post">
+                <select name="status" onchange="this.form.submit()">
+                  {% for s in statuses %}
+                  <option value="{{ s }}" {% if s == ticket.status %}selected{% endif %}>{{ s.replace('_', ' ') }}</option>
+                  {% endfor %}
+                </select>
+              </form>
+            </td>
+            <td>{{ ticket.created_at }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% endif %}
+    </section>
+  </main>
+</body>
+</html>
