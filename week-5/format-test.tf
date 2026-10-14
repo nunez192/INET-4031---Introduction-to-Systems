@@ -1,3 +1,3 @@
 locals {
-    example   =   "formatting test"
+  example = "formatting test"
 }
