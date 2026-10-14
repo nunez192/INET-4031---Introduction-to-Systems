@@ -1,0 +1,3 @@
+locals {
+    example   =   "formatting test"
+}
