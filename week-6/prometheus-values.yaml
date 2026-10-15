@@ -1,0 +1,31 @@
+# Settings for a lean Prometheus on a small single-node k3s VM.
+# Anything not listed here keeps the chart's default.
+
+# Alertmanager sends notifications and the pushgateway accepts pushed metrics.
+# Nobody is on call for a lab VM, and nothing in this lab pushes metrics.
+alertmanager:
+  enabled: false
+prometheus-pushgateway:
+  enabled: false
+
+server:
+  # Two days of history is plenty for a lab. With no volume, the history is
+  # lost whenever the pod restarts.
+  retention: 2d
+  persistentVolume:
+    enabled: false
+  resources:
+    requests:
+      cpu: 50m
+      memory: 128Mi
+    limits:
+      memory: 512Mi
+
+# These two jobs scrape the API server and the kubelet's own metrics. They
+# produce a lot of series that nothing in this lab reads. Container CPU and
+# memory come from a different job, which stays on.
+scrapeConfigs:
+  kubernetes-api-servers:
+    enabled: false
+  kubernetes-nodes:
+    enabled: false
