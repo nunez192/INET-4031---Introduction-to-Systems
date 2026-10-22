@@ -11,7 +11,7 @@ prometheus-pushgateway:
 server:
   # Two days of history is plenty for a lab. With no volume, the history is
   # lost whenever the pod restarts.
-  retention: 2d
+  retention: 3d
   persistentVolume:
     enabled: false
   resources:
