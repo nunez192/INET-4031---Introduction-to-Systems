@@ -1,6 +1,6 @@
 resource "kubernetes_persistent_volume_claim_v1" "db_data" {
   metadata {
-    name = "db-data"
+    name = "db-data-v2"
   }
 
   spec {
