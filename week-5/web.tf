@@ -33,7 +33,7 @@ resource "kubernetes_deployment_v1" "web" {
           }
 
           security_context {
-            allow_privilege_escalation = false
+            allow_privilege_escalation = true
 
             capabilities {
               drop = ["ALL"]
