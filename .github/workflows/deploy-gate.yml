@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  pull_request:
 
 permissions:
   contents: read
@@ -23,3 +24,47 @@ jobs:
 
       - name: Install OpenTofu
         uses: opentofu/setup-opentofu@a1320f892987e89d278cc92dc5adc984fb93aca4 # v2.0.2
+  helm:
+    name: render the Prometheus chart
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+
+      - name: Add the chart repository
+        run: |
+          helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+          helm repo update prometheus-community
+
+      - name: Render the chart with your values
+        run: |
+          helm template prometheus prometheus-community/prometheus \
+            --version 29.35.0 \
+            --namespace monitoring \
+            --values week-6/prometheus-values.yaml > /dev/null
+
+  security:
+    name: security scan
+    runs-on: ubuntu-latest
+    env:
+      POLICY: CKV_K8S_10,CKV_K8S_11,CKV_K8S_12,CKV_K8S_13,CKV_K8S_16,CKV_K8S_20
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+
+      - name: Install Checkov
+        run: |
+          python3 -m venv "$RUNNER_TEMP/scan"
+          "$RUNNER_TEMP/scan/bin/pip" install --quiet checkov==3.3.26
+
+      - name: Scan the OpenTofu files
+        run: |
+          "$RUNNER_TEMP/scan/bin/checkov" \
+            --directory week-5 \
+            --framework terraform \
+            --check "$POLICY" \
+            --compact --quiet --skip-download
