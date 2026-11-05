@@ -8,7 +8,7 @@ resource "kubernetes_persistent_volume_claim_v1" "db_data" {
 
     resources {
       requests = {
-        storage = "1Gi"
+        storage = "100Mi"
       }
     }
   }
