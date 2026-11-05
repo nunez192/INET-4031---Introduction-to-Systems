@@ -83,25 +83,6 @@ if ! git merge --ff-only --quiet origin/main || [ "$(git rev-parse HEAD)" != "$N
   exit 1
 fi
 
-log "deploying ${NEW:0:7}"
-# Step 1: Deploy the application with OpenTofu
-log "step 1 of 2: tofu apply in week-5"
-(cd week-5 && tofu init -input=false && tofu apply -auto-approve -input=false -lock-timeout=60s)
-
-# Step 2: Deploy Prometheus with Helm
-log "step 2 of 2: helm upgrade for prometheus"
-helm repo add prometheus-community https://prometheus-community.github.io/helm-charts --force-update
-helm repo update prometheus-community
-helm upgrade --install prometheus prometheus-community/prometheus \
-  --version 29.35.0 \
-  --namespace monitoring \
-  --create-namespace \
-  --values week-6/prometheus-values.yaml \
-  --wait \
-  --rollback-on-failure \
-  --timeout 5m
-
-echo "$NEW" > "$STATE"
 
 log "deploying ${NEW:0:7}"
 
