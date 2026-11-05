@@ -21,9 +21,9 @@
   2. Restore it with `./week-9/restore.sh ~/backups/<file>`.
   3. Check the rows with `./week-9/sql.sh`.
 - **Measured in the drill:**
-  - Rows before: ROWS_BEFORE_HERE
-  - Age of the backup used: BACKUP_AGE_HERE seconds (target: 5 minutes)
-  - Recovery time: RTO_HERE seconds (target: 10 minutes)
+  - Rows before: tickets: 3 
+  - Age of the backup used: 58 seconds (target: 5 minutes)
+  - Recovery time: 33 seconds (target: 10 minutes)
 
 ## Rebuild on a fresh VM
 The cron lines, the backups and the database volume live on the VM, so a new VM starts without them.
