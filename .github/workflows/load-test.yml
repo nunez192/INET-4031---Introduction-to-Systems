@@ -1,0 +1,54 @@
+name: Performance smoke test
+
+on:
+  pull_request:
+    paths:
+      - "week-4/app/**"
+      - "week-4/docker-compose.yml"
+      - "week-10/smoke-test.js"
+      - ".github/workflows/load-test.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  k6:
+    name: performance smoke test
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Start the app and its database
+        run: |
+          cp week-4/.env.example week-4/.env
+          docker compose -f week-4/docker-compose.yml up -d --build --wait
+
+      - name: Add 10,000 tickets
+        run: |
+          set -a
+          . week-4/.env
+          set +a
+          docker compose -f week-4/docker-compose.yml exec -T db psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "INSERT INTO tickets (title, description, status, created_at) SELECT 'Seeded ticket ' || g, 'Synthetic description for seeded ticket number ' || g, (ARRAY['open','in_progress','closed'])[1 + (g % 3)], now() - (g || ' minutes')::interval FROM generate_series(1, 10000) g"
+
+      - name: Install k6
+        run: |
+          curl -fsSL -o /tmp/k6.tgz https://github.com/grafana/k6/releases/download/v2.3.0/k6-v2.3.0-linux-amd64.tar.gz
+          echo "39c3117b6af817592dcd0ce4242105c0a7af10948c2a425306f0be8f7a8a8ab1  /tmp/k6.tgz" | sha256sum -c -
+          tar -xzf /tmp/k6.tgz -C /tmp
+          sudo install -m 0755 /tmp/k6-v2.3.0-linux-amd64/k6 /usr/local/bin/k6
+
+      - name: Run the smoke test
+        run: DURATION=30s k6 run --no-color week-10/smoke-test.js
+
+      - name: Show the app log if anything failed
+        if: failure()
+        run: docker compose -f week-4/docker-compose.yml logs web | tail -n 30
+
+      - name: Stop the app
+        if: always()
+        run: docker compose -f week-4/docker-compose.yml down -v
