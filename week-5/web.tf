@@ -25,7 +25,7 @@ resource "kubernetes_deployment_v1" "web" {
 
         container {
           name              = "web"
-          image             = "docker.io/library/week-4-web:latest"
+          image             = "docker.io/library/week-4-web:v2"
           image_pull_policy = "IfNotPresent"
 
           port {
