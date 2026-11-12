@@ -55,7 +55,7 @@ def health():
 def index():
     with get_conn() as conn:
         with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
-            cur.execute("SELECT * FROM tickets ORDER BY id DESC LIMIT 50")
+            cur.execute("SELECT * FROM tickets ORDER BY id DESC")
             tickets = cur.fetchall()
     return render_template("index.html", tickets=tickets, statuses=STATUSES)
 
