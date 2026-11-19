@@ -1,0 +1,9 @@
+Control_ID,Control,Tool,Status,Evidence,Notes
+CG-01,Container vulnerability scanning,Trivy,Fail,evidence/trivy-image-after.txt,47 HIGH vulnerabilities remain
+CG-02,Fixable vulnerability remediation,Trivy,Pass,evidence/trivy-image-before.txt,Fixable vulnerability reduced through image rebuild; see after report
+CG-03,Secret detection in Git history,Gitleaks,Fail,evidence/gitleaks-report.json,One possible exposed API key requires review
+CG-04,Infrastructure configuration scanning,Checkov,Fail,evidence/checkov-initial.txt,24 checks failed
+CG-05,Database container security context,kube-score,Fail,evidence/kube-score-initial.txt,Database manifest lacks a security context
+CG-06,Database resource requests and limits,kube-score,Fail,evidence/kube-score-initial.txt,Database manifest lacks CPU and memory requests and limits
+CG-07,Database network isolation,kube-score,Needs Review,evidence/kube-score-initial.txt,Static scan found no matching NetworkPolicy; live cluster has db-clients policy
+CG-08,Application secrets managed in Kubernetes,kubectl,Needs Review,evidence/environment-checkpoint.txt,Web deployment references app-secrets; verify effective secret usage

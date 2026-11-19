@@ -1,0 +1,6 @@
+Harborlight Logistics - Vulnerability Remediation
+Before: 48 HIGH, 0 CRITICAL
+After: 47 HIGH, 0 CRITICAL
+Reduction: 1 HIGH vulnerability
+Remediation: Updated zlib1g in the Docker image
+Thu Nov 19 03:04:33 AM UTC 2026

@@ -1,0 +1,15 @@
+Thu Nov 19 02:23:00 AM UTC 2026
+NAME           STATUS   ROLES           AGE   VERSION
+ubuntu-week4   Ready    control-plane   49d   v1.36.4+k3s1
+NAME                           READY   STATUS    RESTARTS      AGE
+db-68dc786d-qrd55              1/1     Running   1 (20m ago)   7d
+db-exporter-5bd684db7b-5qfrb   1/1     Running   3 (20m ago)   13d
+web-7b876d4578-m87zd           1/1     Running   2 (20m ago)   6d23h
+NAME                                             READY   STATUS    RESTARTS       AGE
+prometheus-kube-state-metrics-86f6b846bf-x7s65   1/1     Running   45 (20m ago)   35d
+prometheus-prometheus-node-exporter-nkztn        1/1     Running   50 (20m ago)   35d
+prometheus-server-6944b769c9-875rv               2/2     Running   56 (20m ago)   28d
+NAME         POD-SELECTOR   AGE
+db-clients   app=db         13d
+NAME      AGE
+default   49d

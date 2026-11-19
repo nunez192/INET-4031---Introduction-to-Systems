@@ -1,0 +1,14 @@
+Cybersecurity & Governance — Tool Versions
+Environment: Ubuntu Local VM (aarch64)
+Course: INET 4031
+
+Trivy: 0.76.2
+Gitleaks: 8.30.1
+Checkov: 3.4.5
+kube-score: 1.20.0
+
+Python: 3.14.4
+Docker: 29.1.3
+kubectl: v1.36.4+k3s1
+k3s: v1.36.4+k3s1
+Kustomize: v5.8.1

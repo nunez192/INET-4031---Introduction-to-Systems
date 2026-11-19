@@ -1,0 +1,482 @@
+
+       _               _
+   ___| |__   ___  ___| | _______   __
+  / __| '_ \ / _ \/ __| |/ / _ \ \ / /
+ | (__| | | |  __/ (__|   < (_) \ V /
+  \___|_| |_|\___|\___|_|\_\___/ \_/
+
+By Prisma Cloud | version: 3.4.5 
+
+terraform scan results:
+
+Passed checks: 65, Failed checks: 24, Skipped checks: 0
+
+Check: CKV_K8S_37: "Minimise the admission of containers with capabilities assigned"
+	PASSED for resource: kubernetes_deployment_v1.db
+	File: /db.tf:19-103
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-34
+Check: CKV_K8S_26: "Do not specify hostPort unless absolutely necessary"
+	PASSED for resource: kubernetes_deployment_v1.db
+	File: /db.tf:19-103
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-25
+Check: CKV_K8S_10: "CPU requests should be set"
+	PASSED for resource: kubernetes_deployment_v1.db
+	File: /db.tf:19-103
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-9
+Check: CKV_K8S_16: "Do not admit privileged containers"
+	PASSED for resource: kubernetes_deployment_v1.db
+	File: /db.tf:19-103
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-15
+Check: CKV_K8S_14: "Image Tag should be fixed - not latest or blank"
+	PASSED for resource: kubernetes_deployment_v1.db
+	File: /db.tf:19-103
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-13
+Check: CKV_K8S_27: "Do not expose the docker daemon socket to containers"
+	PASSED for resource: kubernetes_deployment_v1.db
+	File: /db.tf:19-103
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-26
+Check: CKV_K8S_19: "Do not admit containers wishing to share the host network namespace"
+	PASSED for resource: kubernetes_deployment_v1.db
+	File: /db.tf:19-103
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-18
+Check: CKV_K8S_20: "Containers should not run with allowPrivilegeEscalation"
+	PASSED for resource: kubernetes_deployment_v1.db
+	File: /db.tf:19-103
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-19
+Check: CKV_K8S_159: "Do not admit privileged containers"
+	PASSED for resource: kubernetes_deployment_v1.db
+	File: /db.tf:19-103
+Check: CKV_K8S_17: "Do not admit containers wishing to share the host process ID namespace"
+	PASSED for resource: kubernetes_deployment_v1.db
+	File: /db.tf:19-103
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-16
+Check: CKV_K8S_22: "Use read-only filesystem for containers where possible"
+	PASSED for resource: kubernetes_deployment_v1.db
+	File: /db.tf:19-103
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-21
+Check: CKV_K8S_34: "Ensure that Tiller (Helm v2) is not deployed"
+	PASSED for resource: kubernetes_deployment_v1.db
+	File: /db.tf:19-103
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-32
+Check: CKV_K8S_25: "Minimize the admission of containers with added capability"
+	PASSED for resource: kubernetes_deployment_v1.db
+	File: /db.tf:19-103
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-24
+Check: CKV_K8S_12: "Memory Limits should be set"
+	PASSED for resource: kubernetes_deployment_v1.db
+	File: /db.tf:19-103
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-11
+Check: CKV_K8S_18: "Do not admit containers wishing to share the host IPC namespace"
+	PASSED for resource: kubernetes_deployment_v1.db
+	File: /db.tf:19-103
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-17
+Check: CKV_K8S_39: "Do not use the CAP_SYS_ADMIN linux capability"
+	PASSED for resource: kubernetes_deployment_v1.db
+	File: /db.tf:19-103
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-36
+Check: CKV_K8S_9: "Readiness Probe Should be Configured"
+	PASSED for resource: kubernetes_deployment_v1.db
+	File: /db.tf:19-103
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-8
+Check: CKV_K8S_13: "Memory requests should be set"
+	PASSED for resource: kubernetes_deployment_v1.db
+	File: /db.tf:19-103
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-12
+Check: CKV_K8S_11: "CPU Limits should be set"
+	PASSED for resource: kubernetes_deployment_v1.db
+	File: /db.tf:19-103
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-10
+Check: CKV_K8S_44: "Ensure that the Tiller Service (Helm v2) is deleted"
+	PASSED for resource: kubernetes_service_v1.db
+	File: /db.tf:105-118
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-41
+Check: CKV_K8S_37: "Minimise the admission of containers with capabilities assigned"
+	PASSED for resource: kubernetes_deployment_v1.db_exporter
+	File: /exporter.tf:2-108
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-34
+Check: CKV_K8S_35: "Prefer using secrets as files over secrets as environment variables"
+	PASSED for resource: kubernetes_deployment_v1.db_exporter
+	File: /exporter.tf:2-108
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-33
+Check: CKV_K8S_26: "Do not specify hostPort unless absolutely necessary"
+	PASSED for resource: kubernetes_deployment_v1.db_exporter
+	File: /exporter.tf:2-108
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-25
+Check: CKV_K8S_10: "CPU requests should be set"
+	PASSED for resource: kubernetes_deployment_v1.db_exporter
+	File: /exporter.tf:2-108
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-9
+Check: CKV_K8S_16: "Do not admit privileged containers"
+	PASSED for resource: kubernetes_deployment_v1.db_exporter
+	File: /exporter.tf:2-108
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-15
+Check: CKV_K8S_28: "Minimize the admission of containers with the NET_RAW capability"
+	PASSED for resource: kubernetes_deployment_v1.db_exporter
+	File: /exporter.tf:2-108
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-27
+Check: CKV_K8S_29: "Apply security context to your pods, deployments and daemon_sets"
+	PASSED for resource: kubernetes_deployment_v1.db_exporter
+	File: /exporter.tf:2-108
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/ensure-securitycontext-is-applied-to-pods-and-containers
+Check: CKV_K8S_14: "Image Tag should be fixed - not latest or blank"
+	PASSED for resource: kubernetes_deployment_v1.db_exporter
+	File: /exporter.tf:2-108
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-13
+Check: CKV_K8S_27: "Do not expose the docker daemon socket to containers"
+	PASSED for resource: kubernetes_deployment_v1.db_exporter
+	File: /exporter.tf:2-108
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-26
+Check: CKV_K8S_19: "Do not admit containers wishing to share the host network namespace"
+	PASSED for resource: kubernetes_deployment_v1.db_exporter
+	File: /exporter.tf:2-108
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-18
+Check: CKV_K8S_20: "Containers should not run with allowPrivilegeEscalation"
+	PASSED for resource: kubernetes_deployment_v1.db_exporter
+	File: /exporter.tf:2-108
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-19
+Check: CKV_K8S_159: "Do not admit privileged containers"
+	PASSED for resource: kubernetes_deployment_v1.db_exporter
+	File: /exporter.tf:2-108
+Check: CKV_K8S_17: "Do not admit containers wishing to share the host process ID namespace"
+	PASSED for resource: kubernetes_deployment_v1.db_exporter
+	File: /exporter.tf:2-108
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-16
+Check: CKV_K8S_34: "Ensure that Tiller (Helm v2) is not deployed"
+	PASSED for resource: kubernetes_deployment_v1.db_exporter
+	File: /exporter.tf:2-108
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-32
+Check: CKV_K8S_25: "Minimize the admission of containers with added capability"
+	PASSED for resource: kubernetes_deployment_v1.db_exporter
+	File: /exporter.tf:2-108
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-24
+Check: CKV_K8S_12: "Memory Limits should be set"
+	PASSED for resource: kubernetes_deployment_v1.db_exporter
+	File: /exporter.tf:2-108
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-11
+Check: CKV_K8S_18: "Do not admit containers wishing to share the host IPC namespace"
+	PASSED for resource: kubernetes_deployment_v1.db_exporter
+	File: /exporter.tf:2-108
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-17
+Check: CKV_K8S_39: "Do not use the CAP_SYS_ADMIN linux capability"
+	PASSED for resource: kubernetes_deployment_v1.db_exporter
+	File: /exporter.tf:2-108
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-36
+Check: CKV_K8S_30: "Apply security context to your pods and containers"
+	PASSED for resource: kubernetes_deployment_v1.db_exporter
+	File: /exporter.tf:2-108
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-28
+Check: CKV_K8S_9: "Readiness Probe Should be Configured"
+	PASSED for resource: kubernetes_deployment_v1.db_exporter
+	File: /exporter.tf:2-108
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-8
+Check: CKV_K8S_13: "Memory requests should be set"
+	PASSED for resource: kubernetes_deployment_v1.db_exporter
+	File: /exporter.tf:2-108
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-12
+Check: CKV_K8S_11: "CPU Limits should be set"
+	PASSED for resource: kubernetes_deployment_v1.db_exporter
+	File: /exporter.tf:2-108
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-10
+Check: CKV_K8S_44: "Ensure that the Tiller Service (Helm v2) is deleted"
+	PASSED for resource: kubernetes_service_v1.db_exporter
+	File: /exporter.tf:111-129
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-41
+Check: CKV_K8S_37: "Minimise the admission of containers with capabilities assigned"
+	PASSED for resource: kubernetes_deployment_v1.web
+	File: /web.tf:1-97
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-34
+Check: CKV_K8S_26: "Do not specify hostPort unless absolutely necessary"
+	PASSED for resource: kubernetes_deployment_v1.web
+	File: /web.tf:1-97
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-25
+Check: CKV_K8S_10: "CPU requests should be set"
+	PASSED for resource: kubernetes_deployment_v1.web
+	File: /web.tf:1-97
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-9
+Check: CKV_K8S_16: "Do not admit privileged containers"
+	PASSED for resource: kubernetes_deployment_v1.web
+	File: /web.tf:1-97
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-15
+Check: CKV_K8S_28: "Minimize the admission of containers with the NET_RAW capability"
+	PASSED for resource: kubernetes_deployment_v1.web
+	File: /web.tf:1-97
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-27
+Check: CKV_K8S_29: "Apply security context to your pods, deployments and daemon_sets"
+	PASSED for resource: kubernetes_deployment_v1.web
+	File: /web.tf:1-97
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/ensure-securitycontext-is-applied-to-pods-and-containers
+Check: CKV_K8S_14: "Image Tag should be fixed - not latest or blank"
+	PASSED for resource: kubernetes_deployment_v1.web
+	File: /web.tf:1-97
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-13
+Check: CKV_K8S_27: "Do not expose the docker daemon socket to containers"
+	PASSED for resource: kubernetes_deployment_v1.web
+	File: /web.tf:1-97
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-26
+Check: CKV_K8S_19: "Do not admit containers wishing to share the host network namespace"
+	PASSED for resource: kubernetes_deployment_v1.web
+	File: /web.tf:1-97
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-18
+Check: CKV_K8S_20: "Containers should not run with allowPrivilegeEscalation"
+	PASSED for resource: kubernetes_deployment_v1.web
+	File: /web.tf:1-97
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-19
+Check: CKV_K8S_159: "Do not admit privileged containers"
+	PASSED for resource: kubernetes_deployment_v1.web
+	File: /web.tf:1-97
+Check: CKV_K8S_17: "Do not admit containers wishing to share the host process ID namespace"
+	PASSED for resource: kubernetes_deployment_v1.web
+	File: /web.tf:1-97
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-16
+Check: CKV_K8S_34: "Ensure that Tiller (Helm v2) is not deployed"
+	PASSED for resource: kubernetes_deployment_v1.web
+	File: /web.tf:1-97
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-32
+Check: CKV_K8S_25: "Minimize the admission of containers with added capability"
+	PASSED for resource: kubernetes_deployment_v1.web
+	File: /web.tf:1-97
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-24
+Check: CKV_K8S_12: "Memory Limits should be set"
+	PASSED for resource: kubernetes_deployment_v1.web
+	File: /web.tf:1-97
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-11
+Check: CKV_K8S_18: "Do not admit containers wishing to share the host IPC namespace"
+	PASSED for resource: kubernetes_deployment_v1.web
+	File: /web.tf:1-97
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-17
+Check: CKV_K8S_39: "Do not use the CAP_SYS_ADMIN linux capability"
+	PASSED for resource: kubernetes_deployment_v1.web
+	File: /web.tf:1-97
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-36
+Check: CKV_K8S_30: "Apply security context to your pods and containers"
+	PASSED for resource: kubernetes_deployment_v1.web
+	File: /web.tf:1-97
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-28
+Check: CKV_K8S_9: "Readiness Probe Should be Configured"
+	PASSED for resource: kubernetes_deployment_v1.web
+	File: /web.tf:1-97
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-8
+Check: CKV_K8S_13: "Memory requests should be set"
+	PASSED for resource: kubernetes_deployment_v1.web
+	File: /web.tf:1-97
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-12
+Check: CKV_K8S_11: "CPU Limits should be set"
+	PASSED for resource: kubernetes_deployment_v1.web
+	File: /web.tf:1-97
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-10
+Check: CKV_K8S_44: "Ensure that the Tiller Service (Helm v2) is deleted"
+	PASSED for resource: kubernetes_service_v1.web
+	File: /web.tf:99-112
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-41
+Check: CKV_K8S_21: "The default namespace should not be used"
+	FAILED for resource: kubernetes_config_map_v1.app_config
+	File: /config.tf:1-10
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-20
+
+		1  | resource "kubernetes_config_map_v1" "app_config" {
+		2  |   metadata {
+		3  |     name = "app-config"
+		4  |   }
+		5  | 
+		6  |   data = {
+		7  |     POSTGRES_USER = var.postgres_user
+		8  |     POSTGRES_DB   = var.postgres_db
+		9  |   }
+		10 | }
+
+Check: CKV_K8S_21: "The default namespace should not be used"
+	FAILED for resource: kubernetes_secret_v1.app_secrets
+	File: /config.tf:12-21
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-20
+
+		12 | resource "kubernetes_secret_v1" "app_secrets" {
+		13 |   metadata {
+		14 |     name = "app-secrets"
+		15 |   }
+		16 | 
+		17 |   data = {
+		18 |     POSTGRES_PASSWORD = var.postgres_password
+		19 |     FLASK_SECRET_KEY  = var.flask_secret_key
+		20 |   }
+		21 | }
+
+Check: CKV_K8S_21: "The default namespace should not be used"
+	FAILED for resource: kubernetes_deployment_v1.db
+	File: /db.tf:19-103
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-20
+
+		Code lines for this resource are too many. Please use IDE of your choice to review the file.
+Check: CKV_K8S_8: "Liveness Probe Should be Configured"
+	FAILED for resource: kubernetes_deployment_v1.db
+	File: /db.tf:19-103
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-7
+
+		Code lines for this resource are too many. Please use IDE of your choice to review the file.
+Check: CKV_K8S_35: "Prefer using secrets as files over secrets as environment variables"
+	FAILED for resource: kubernetes_deployment_v1.db
+	File: /db.tf:19-103
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-33
+
+		Code lines for this resource are too many. Please use IDE of your choice to review the file.
+Check: CKV_K8S_28: "Minimize the admission of containers with the NET_RAW capability"
+	FAILED for resource: kubernetes_deployment_v1.db
+	File: /db.tf:19-103
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-27
+
+		Code lines for this resource are too many. Please use IDE of your choice to review the file.
+Check: CKV_K8S_29: "Apply security context to your pods, deployments and daemon_sets"
+	FAILED for resource: kubernetes_deployment_v1.db
+	File: /db.tf:19-103
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/ensure-securitycontext-is-applied-to-pods-and-containers
+
+		Code lines for this resource are too many. Please use IDE of your choice to review the file.
+Check: CKV_K8S_15: "Image Pull Policy should be Always"
+	FAILED for resource: kubernetes_deployment_v1.db
+	File: /db.tf:19-103
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-14
+
+		Code lines for this resource are too many. Please use IDE of your choice to review the file.
+Check: CKV_K8S_43: "Image should use digest"
+	FAILED for resource: kubernetes_deployment_v1.db
+	File: /db.tf:19-103
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-39
+
+		Code lines for this resource are too many. Please use IDE of your choice to review the file.
+Check: CKV_K8S_30: "Apply security context to your pods and containers"
+	FAILED for resource: kubernetes_deployment_v1.db
+	File: /db.tf:19-103
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-28
+
+		Code lines for this resource are too many. Please use IDE of your choice to review the file.
+Check: CKV_K8S_21: "The default namespace should not be used"
+	FAILED for resource: kubernetes_service_v1.db
+	File: /db.tf:105-118
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-20
+
+		105 | resource "kubernetes_service_v1" "db" {
+		106 |   metadata {
+		107 |     name = "db"
+		108 |   }
+		109 | 
+		110 |   spec {
+		111 |     selector = { app = "db" }
+		112 | 
+		113 |     port {
+		114 |       port        = 5432
+		115 |       target_port = 5432
+		116 |     }
+		117 |   }
+		118 | }
+
+Check: CKV_K8S_21: "The default namespace should not be used"
+	FAILED for resource: kubernetes_deployment_v1.db_exporter
+	File: /exporter.tf:2-108
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-20
+
+		Code lines for this resource are too many. Please use IDE of your choice to review the file.
+Check: CKV_K8S_8: "Liveness Probe Should be Configured"
+	FAILED for resource: kubernetes_deployment_v1.db_exporter
+	File: /exporter.tf:2-108
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-7
+
+		Code lines for this resource are too many. Please use IDE of your choice to review the file.
+Check: CKV_K8S_15: "Image Pull Policy should be Always"
+	FAILED for resource: kubernetes_deployment_v1.db_exporter
+	File: /exporter.tf:2-108
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-14
+
+		Code lines for this resource are too many. Please use IDE of your choice to review the file.
+Check: CKV_K8S_22: "Use read-only filesystem for containers where possible"
+	FAILED for resource: kubernetes_deployment_v1.db_exporter
+	File: /exporter.tf:2-108
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-21
+
+		Code lines for this resource are too many. Please use IDE of your choice to review the file.
+Check: CKV_K8S_43: "Image should use digest"
+	FAILED for resource: kubernetes_deployment_v1.db_exporter
+	File: /exporter.tf:2-108
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-39
+
+		Code lines for this resource are too many. Please use IDE of your choice to review the file.
+Check: CKV_K8S_21: "The default namespace should not be used"
+	FAILED for resource: kubernetes_service_v1.db_exporter
+	File: /exporter.tf:111-129
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-20
+
+		111 | resource "kubernetes_service_v1" "db_exporter" {
+		112 |   metadata {
+		113 |     name = "db-exporter"
+		114 | 
+		115 |     annotations = {
+		116 |       "prometheus.io/scrape" = "true"
+		117 |       "prometheus.io/port"   = "9187"
+		118 |     }
+		119 |   }
+		120 | 
+		121 |   spec {
+		122 |     selector = { app = "db-exporter" }
+		123 | 
+		124 |     port {
+		125 |       port        = 9187
+		126 |       target_port = 9187
+		127 |     }
+		128 |   }
+		129 | }
+
+Check: CKV_K8S_21: "The default namespace should not be used"
+	FAILED for resource: kubernetes_deployment_v1.web
+	File: /web.tf:1-97
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-20
+
+		Code lines for this resource are too many. Please use IDE of your choice to review the file.
+Check: CKV_K8S_8: "Liveness Probe Should be Configured"
+	FAILED for resource: kubernetes_deployment_v1.web
+	File: /web.tf:1-97
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-7
+
+		Code lines for this resource are too many. Please use IDE of your choice to review the file.
+Check: CKV_K8S_35: "Prefer using secrets as files over secrets as environment variables"
+	FAILED for resource: kubernetes_deployment_v1.web
+	File: /web.tf:1-97
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-33
+
+		Code lines for this resource are too many. Please use IDE of your choice to review the file.
+Check: CKV_K8S_15: "Image Pull Policy should be Always"
+	FAILED for resource: kubernetes_deployment_v1.web
+	File: /web.tf:1-97
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-14
+
+		Code lines for this resource are too many. Please use IDE of your choice to review the file.
+Check: CKV_K8S_22: "Use read-only filesystem for containers where possible"
+	FAILED for resource: kubernetes_deployment_v1.web
+	File: /web.tf:1-97
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-21
+
+		Code lines for this resource are too many. Please use IDE of your choice to review the file.
+Check: CKV_K8S_43: "Image should use digest"
+	FAILED for resource: kubernetes_deployment_v1.web
+	File: /web.tf:1-97
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-39
+
+		Code lines for this resource are too many. Please use IDE of your choice to review the file.
+Check: CKV_K8S_21: "The default namespace should not be used"
+	FAILED for resource: kubernetes_service_v1.web
+	File: /web.tf:99-112
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/kubernetes-policies/kubernetes-policy-index/bc-k8s-20
+
+		99  | resource "kubernetes_service_v1" "web" {
+		100 |   metadata {
+		101 |     name = "web"
+		102 |   }
+		103 | 
+		104 |   spec {
+		105 |     selector = { app = "web" }
+		106 | 
+		107 |     port {
+		108 |       port        = 8080
+		109 |       target_port = 5000
+		110 |     }
+		111 |   }
+		112 | }
+
+

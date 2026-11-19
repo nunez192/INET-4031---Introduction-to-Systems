@@ -1,0 +1,23 @@
+[
+ {
+  "RuleID": "generic-api-key",
+  "Description": "Detected a Generic API Key, potentially exposing access to various services and sensitive operations.",
+  "StartLine": 3,
+  "EndLine": 3,
+  "StartColumn": 4,
+  "EndColumn": 53,
+  "Match": "FLASK_SECRET_KEY: REDACTED",
+  "Secret": "REDACTED",
+  "File": "week-4/env-configmap.yaml",
+  "SymlinkFile": "",
+  "Commit": "1e8186201650f8504b66ba79ff33df4a9c491bb2",
+  "Link": "https://github.com/nunez192/INET-4031---Introduction-to-Systems/blob/1e8186201650f8504b66ba79ff33df4a9c491bb2/week-4/env-configmap.yaml#L3",
+  "Entropy": 3.5275183,
+  "Author": "Shanna Nunez",
+  "Email": "nunez192@umn.edu",
+  "Date": "2026-10-02T02:28:53Z",
+  "Message": "feat: add Kubernetes manifests",
+  "Tags": [],
+  "Fingerprint": "1e8186201650f8504b66ba79ff33df4a9c491bb2:week-4/env-configmap.yaml:generic-api-key:3"
+ }
+]

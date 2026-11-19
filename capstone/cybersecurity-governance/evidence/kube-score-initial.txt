@@ -1,0 +1,75 @@
+apps/v1/Deployment db                                                         💥
+    path=/home/shanna/INET-4031---Introduction-to-Systems/week-4/db-deployment.yaml
+    [CRITICAL] Container Security Context ReadOnlyRootFilesystem
+        · db -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · db -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · db -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can start and run
+            without crashing. Set resource.requests.ephemeral-storage
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what can communicate
+            with this pod. Note, this feature needs to be supported by the CNI implementation
+            used in the Kubernetes cluster to have an effect.
+    [CRITICAL] Container Resources
+        · db -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set resources.limits.cpu
+        · db -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · db -> CPU request is not set
+            Resource requests are recommended to make sure that the application can start and
+            run without crashing. Set resources.requests.cpu
+        · db -> Memory request is not set
+            Resource requests are recommended to make sure that the application can start and
+            run without crashing. Set resources.requests.memory
+    [CRITICAL] Container Image Pull Policy
+        · db -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to make sure that
+            the imagePullSecrets are always correct, and to always get the image you want.
+    [CRITICAL] Container Security Context User Group ID
+        · db -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+apps/v1/Deployment web                                                        💥
+    path=/home/shanna/INET-4031---Introduction-to-Systems/week-4/web-deployment.yaml
+    [CRITICAL] Container Image Tag
+        · web -> Image with latest tag
+            Using a fixed tag is recommended to avoid accidental upgrades
+    [CRITICAL] Container Security Context ReadOnlyRootFilesystem
+        · web -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · web -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · web -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can start and run
+            without crashing. Set resource.requests.ephemeral-storage
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what can communicate
+            with this pod. Note, this feature needs to be supported by the CNI implementation
+            used in the Kubernetes cluster to have an effect.
+    [CRITICAL] Container Resources
+        · web -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set resources.limits.cpu
+        · web -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · web -> CPU request is not set
+            Resource requests are recommended to make sure that the application can start and
+            run without crashing. Set resources.requests.cpu
+        · web -> Memory request is not set
+            Resource requests are recommended to make sure that the application can start and
+            run without crashing. Set resources.requests.memory
+    [CRITICAL] Container Image Pull Policy
+        · web -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to make sure that
+            the imagePullSecrets are always correct, and to always get the image you want.
+    [CRITICAL] Container Security Context User Group ID
+        · web -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
